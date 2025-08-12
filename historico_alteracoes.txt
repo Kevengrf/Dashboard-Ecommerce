@@ -1,0 +1,80 @@
+# Histórico de Alterações - Projeto Recimportados
+
+### Prompt 1 (2025-08-10)
+
+- **Ação:** Início do projeto e criação da estrutura de pastas.
+- **Detalhes:**
+  - Criação do arquivo `historico_alteracoes.txt` para log de atividades.
+  - Definição e criação da estrutura de diretórios para o backend (Node.js/Express) e frontend (React).
+  - Configuração inicial dos projetos `package.json` em ambas as pastas.
+  - Instalação das dependências primárias para backend e frontend.
+  - Criação dos arquivos de schema do banco de dados, rotas e controladores do backend.
+  - Criação dos componentes e páginas iniciais do frontend com Material-UI.
+
+### Prompt 2 (2025-08-10)
+
+- **Ação:** Melhoria do formulário de produtos e implementação da base para cadastro de usuários.
+- **Detalhes:**
+  - **Melhoria do Formulário de Produtos:**
+    - Adicionado campo para upload de fotos.
+    - Formulário é limpo e redireciona para o dashboard após o cadastro.
+    - Criado um Contexto (`ProductContext`) para gerenciar o estado dos produtos globalmente, fazendo com que a lista seja atualizada em tempo real.
+  - **Modernização da UI:**
+    - Adicionada a biblioteca `framer-motion` para animações.
+    - Criado um tema escuro e moderno com paleta de cores customizada.
+    - Implementado um menu lateral (Sidebar) para navegação principal.
+    - A estrutura do App foi refeita para suportar o layout com menu lateral.
+  - **Tela de Acompanhamento de Entrega:**
+    - Criada a página `/delivery-tracking/:id`.
+    - Implementada a animação da "motinha" se movendo pelas etapas da entrega.
+  - **Cadastro de Usuários (Vendedores/Entregadores):**
+    - **Backend:** Criado o `users.controller` com criptografia de senha (bcrypt) e a rota `POST /api/users`.
+    - **Frontend:** Criada a página `ManageUsersPage` e o componente `UserForm`.
+    - O formulário exibe campos condicionais (para veículo/placa) se o tipo de usuário for "Entregador".
+    - As rotas `/users/sellers` e `/users/deliverers` agora levam para a nova página de gerenciamento.
+
+### Prompt 3 (2025-08-10)
+
+- **Ação:** Criação da tela de Análise de Vendas com gráficos.
+- **Detalhes:**
+  - **Gráficos:**
+    - Instalada a biblioteca `recharts`.
+    - Criado o componente `SalesChart` para exibir um gráfico de barras com o ranking de vendas por vendedor.
+    - Criada a página `SalesAnalyticsPage` para ser o dashboard de métricas.
+    - A página inclui cards de métricas rápidas (Faturamento, Vendas, Destaque) e o gráfico de ranking.
+  - **Roteamento:**
+    - A rota `/analytics/sales` agora renderiza a nova página de análise.
+  - **Histórico:**
+    - O arquivo `historico_alteracoes.txt` foi atualizado para refletir estas últimas mudanças.
+
+### Prompt 4 (2025-08-10)
+
+- **Ação:** Implementação da simulação de fluxo de vendas e migração para TypeScript (em andamento).
+- **Detalhes:**
+  - **Simulação de Fluxo de Vendas:**
+    - Criado `AppContext` como o "cérebro" central da aplicação, gerenciando usuários, produtos, leads e vendas.
+    - Funções `attendLead`, `convertToSale`, `updateDeliveryStatus` foram implementadas no `AppContext` para simular o fluxo.
+    - Botões "Iniciar Demonstração" e "Parar Demonstração" adicionados ao Dashboard para automatizar o processo de venda e entrega.
+    - Telas de Leads, Dashboard, Entregas Ativas e Análise de Vendas foram conectadas ao `AppContext` para refletir o estado da simulação.
+  - **Migração para TypeScript:**
+    - TypeScript instalado e `tsconfig.json` configurado.
+    - Todos os arquivos `.jsx` foram renomeados para `.tsx`.
+    - O arquivo `mockData.js` foi renomeado para `mockData.ts` e tipado.
+    - Criado `types.ts` para definir interfaces de `Product`, `User`, `Lead`, `Sale`.
+    - `AppContext.tsx` foi tipado.
+    - Tipagens aplicadas aos seguintes componentes e páginas:
+      - `DashboardPage.tsx`
+      - `LeadsTable.tsx`
+      - `ProductTable.tsx`
+      - `SalesAnalyticsPage.tsx`
+      - `DeliveryStatusPage.tsx`
+      - `LiveDeliveriesPage.tsx`
+      - `AddProductForm.tsx`
+      - `UserForm.tsx`
+      - `ManageUsersPage.tsx`
+      - `DeliveryCard.tsx`
+      - `SalesChart.tsx`
+      - `Sidebar.tsx`
+      - `AddProductPage.tsx`
+      - `LoginPage.tsx`
+      - `PlaceholderPage.tsx`

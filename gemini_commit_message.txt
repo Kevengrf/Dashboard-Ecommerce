@@ -1,0 +1,14 @@
+feat: Implement automated demo, UI/UX enhancements, and bug fixes
+
+This commit introduces a comprehensive automated demo feature that simulates product creation, lead generation, sales, and delivery tracking.
+
+Key changes include:
+- **Automated Demo:** Added `startAutoDemo` and `stopAutoDemo` functions in `AppContext.tsx` to orchestrate random product/lead creation and sales.
+- **UI/UX Redesign:**
+    - Refined `theme.js` for a more technological and sleek aesthetic with updated color palette, typography, and component styles.
+    - Integrated `framer-motion` for global page transition animations via `AnimatedRoutes.tsx`.
+- **Delivery History:**
+    - Renamed `LiveDeliveriesPage.tsx` to `DeliveriesPage.tsx` and updated it to display both live and historical deliveries with a filter.
+    - Created `DeliveryTracker.tsx` with a moving motorcycle icon and integrated it into `DeliveryCard.tsx`.
+- **Competent Salespeople:** Modified `convertToSale` to randomly assign sales to available salespeople.
+- **Bug Fixes:** Addressed several console errors and warnings related to React and Material-UI component usage and imports.
